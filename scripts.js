@@ -3,7 +3,7 @@ const select = document.getElementById('currencySelect')
 const dolar = 5.2
 const euro = 5.9
 const bitcoin = 138403.00
-
+const libra = 6.16
 const convertValues = () => {
     const inputReais = document.getElementById('inputReal').value
     const realTextValue = document.getElementById('realTextValue')
@@ -24,8 +24,17 @@ const convertValues = () => {
         ).format(inputReais / euro);
     }
     if (select.value === 'Bitcoin') {
-        currencyTextValue.innerHTML = inputReais / bitcoin 
+        currencyTextValue.innerHTML = new Intl.NumberFormat('en-UK',
+            { style: 'currency', currency: 'XBT' }
+        ).format(inputReais / bitcoin);
 
+
+
+    }
+    if (select.value === '£ Libra') {
+        currencyTextValue.innerHTML = new Intl.NumberFormat('en-UK',
+            { style: 'currency', currency: 'GBP' }
+        ).format(inputReais / libra);
     }
 
 }
@@ -45,6 +54,11 @@ const changeCurrency = () => {
     if (select.value === 'Bitcoin') {
         currencyName.innerHTML = 'Bitcoin'
         currencyImg.src = './img/Design sem nome (1) 1.png'
+
+    }
+    if (select.value === '£ Libra') {
+        currencyName.innerHTML = '£ Libra'
+        currencyImg.src = './img/libra 1.png'
 
     }
     convertValues()
