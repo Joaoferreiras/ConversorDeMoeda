@@ -50,7 +50,7 @@ const convertValues = async () => {
 
 const changeCurrency = () => {
   const currencyName = document.getElementById("euroOuDolar");
-  const currencyImg = document.getElementById("imgCurrency");
+  const currencyImg = document.getElementById("imgCurrency2");
 
   if (select.value === "€ Euro") {
     currencyName.innerHTML = "Euro";
@@ -62,7 +62,7 @@ const changeCurrency = () => {
   }
   if (select.value === "Bitcoin") {
     currencyName.innerHTML = "Bitcoin";
-    currencyImg.src = "./img/Design sem nome (1) 1.png";
+    currencyImg.src = "./img/Bitcoin.png";
   }
   if (select.value === "£ Libra") {
     currencyName.innerHTML = "£ Libra";
